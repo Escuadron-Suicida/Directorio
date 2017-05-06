@@ -1,0 +1,20 @@
+version: "2"
+
+services:
+  postgres_dev:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: Directorio_development
+      POSTGRES_USER: Directorio_development
+      POSTGRES_PASSWORD: Directorio_development
+
+  postgres_test:
+    image: postgres:latest
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: Directorio_test
+      POSTGRES_USER: Directorio_test
+      POSTGRES_PASSWORD: Directorio_test
