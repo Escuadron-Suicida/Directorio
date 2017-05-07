@@ -25,9 +25,9 @@ default: &default
 
 development:
   <<: *default
-  user: Directorio_development
-  database: Directorio_development
-  password: Directorio_development
+  user: fernando
+  database: fernando
+  password: 1234
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
