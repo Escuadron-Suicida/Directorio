@@ -1,2 +1,22 @@
-<h1>Businesses#show</h1>
-<p>Find me in app/views/businesses/show.html.erb</p>
+<h1>
+  <%= @business.name %>
+</h1>
+
+Rut: <%= @business.rut %>
+<br>
+
+Razon social: <%= @business.legal_name %>
+<br>
+Representate: <%= @business.agent_name %>, <%= @business.agent_rut %>
+<br>
+
+Telefono: <%= @business.phone %>
+<br>
+
+Contacto: <%= @business.contact_name %>
+<br>
+Telefono Contacto: <%= @business.contact_phone %>
+<br>
+
+Direccion: <%= @business.address %>
+<br>

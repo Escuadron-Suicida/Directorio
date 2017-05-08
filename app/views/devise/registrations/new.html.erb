@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2>Registrar empresa</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -11,7 +11,7 @@
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
@@ -19,6 +19,51 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rut %><br />
+    <%= f.text_field :rut %>
+  </div>
+
+  <div class="field">
+    <%= f.label :razon_social %><br />
+    <%= f.text_field :legal_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombre_representate %><br />
+    <%= f.text_field :agent_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rut_representate %><br />
+    <%= f.text_field :agent_rut %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telefono %><br />
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombre_contacto %><br />
+    <%= f.text_field :contact_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telefono_contacto %><br />
+    <%= f.text_field :contact_phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :direccion %><br />
+    <%= f.text_field :address %>
   </div>
 
   <div class="actions">
