@@ -10,6 +10,7 @@
 
   <body>
     <% if not business_signed_in? %>
+      <%= link_to 'Iniciar sesion', new_business_session_path %>
       <%= link_to 'Registrar empresa', new_business_registration_path %>
     <% else %>
       <%= link_to 'Cerrar sesion', destroy_business_session_path, method: :delete %>

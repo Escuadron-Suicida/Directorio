@@ -1,0 +1,24 @@
+<%= render 'partials/list_errors', object: @product %>
+
+
+<%= form_for @product, url: business_products_path(@business), html: { multipart: true } do |f| %>
+  <%= f.label :nombre %>
+  <%= f.text_field :name %>
+
+  <br>
+  <br>
+
+  <%= f.label :descripcion %>
+  <%= f.text_field :description %>
+
+  <br>
+  <br>
+
+  <%= f.label :imagen %>
+  <%= f.file_field :photo %>
+
+  <br>
+  <br>
+
+  <%= f.submit 'Crear producto' %>
+<% end %>

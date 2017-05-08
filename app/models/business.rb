@@ -6,4 +6,6 @@ class Business < ApplicationRecord
 
   has_many :business_sectors
   has_many :sectors, through: :business_sectors
+
+  has_many :products
 end

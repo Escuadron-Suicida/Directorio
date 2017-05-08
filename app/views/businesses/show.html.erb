@@ -1,3 +1,8 @@
+<% if current_business == @business %>
+  <%= link_to 'Agregar producto', new_business_product_path(@business) %>
+<% end %>
+
+
 <h1>
   <%= @business.name %>
 </h1>
@@ -20,3 +25,14 @@ Telefono Contacto: <%= @business.contact_phone %>
 
 Direccion: <%= @business.address %>
 <br>
+
+
+<% if @business.products.length > 0 %>
+  <h2>
+    Productos
+  </h2>
+
+  <% for product in @business.products %>
+    <%= render product %>
+  <% end %>
+<% end %>
