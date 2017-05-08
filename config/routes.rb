@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :businesses
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :businesses
+
+  scope :session do
+    devise_for :businesses
+  end
 end
