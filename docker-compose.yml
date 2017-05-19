@@ -15,6 +15,6 @@ services:
     ports:
       - "5433:5432"
     environment:
-      POSTGRES_DB: fernando
-      POSTGRES_USER: fernando
-      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: Directorio_test
+      POSTGRES_USER: Directorio_test
+      POSTGRES_PASSWORD: Directorio_test

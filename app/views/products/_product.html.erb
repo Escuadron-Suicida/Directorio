@@ -1,6 +1,7 @@
 <div class="col-lg-4">
   <h3>
-    <%= product.name %>
+    <%= link_to product.name, business_product_path(product.business, product) %>
+    <%#= product.name %>
   </h3>
   <br>
   <%= image_tag product.photo.url(:medium) %>
