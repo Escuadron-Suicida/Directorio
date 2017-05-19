@@ -1,5 +1,11 @@
-<% if @businesses %>
-  <% for business in @businesses %>
-    <%= link_to business.name, business_path(business) %>
+<h1>
+  Empresas
+</h1>
+
+<div class="col-lg-4">
+  <% if @businesses %>
+    <% for business in @businesses %>
+      <%= link_to business.name, business_path(business) %>
+    <% end %>
   <% end %>
-<% end %>
+</div>

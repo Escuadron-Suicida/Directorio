@@ -1,10 +1,12 @@
-<h3>
-<%= product.name %>
-</h3>
-<br>
-<%= image_tag product.photo.url(:medium) %>
+<div class="col-lg-4">
+  <h3>
+    <%= product.name %>
+  </h3>
+  <br>
+  <%= image_tag product.photo.url(:medium) %>
 
-<br>
-<br>
+  <br>
+  <br>
 
-<%= product.description %>
+  <%= product.description %>
+</div>

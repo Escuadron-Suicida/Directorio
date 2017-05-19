@@ -1,30 +1,86 @@
+<table class="table">
+  <thead>
+    <th>
+      Nombre
+    </th>
+
+    <th>
+      rut
+    </th>
+
+    <th>
+      Razon social
+    </th>
+
+    <th>
+      Nombre representante
+    </th>
+
+    <th>
+      Rut representante
+    </th>
+
+    <th>
+      Telefono
+    </th>
+
+    <th>
+      Nombre contacto
+    </th>
+
+    <th>
+      Telefono contacto
+    </th>
+
+    <th>
+      Direccion
+    </th>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+	<%= @business.name %>
+      </td>
+
+      <td>
+	<%= @business.rut %>
+      </td>
+
+      <td>
+	<%= @business.legal_name %>
+      </td>
+
+      <td>
+	<%= @business.agent_name %>
+      </td>
+
+      <td>
+	<%= @business.agent_rut %>
+      </td>
+
+      <td>
+	<%= @business.phone %>
+      </td>
+
+      <td>
+	<%= @business.contact_name %>
+      </td>
+
+      <td>
+	<%= @business.contact_phone %>
+      </td>
+
+      <td>
+	<%= @business.address %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 <% if current_business == @business %>
-  <%= link_to 'Agregar producto', new_business_product_path(@business) %>
+  <%= link_to 'Agregar producto', new_business_product_path(@business), class: 'btn btn-default' %>
 <% end %>
-
-
-<h1>
-  <%= @business.name %>
-</h1>
-
-Rut: <%= @business.rut %>
-<br>
-
-Razon social: <%= @business.legal_name %>
-<br>
-Representate: <%= @business.agent_name %>, <%= @business.agent_rut %>
-<br>
-
-Telefono: <%= @business.phone %>
-<br>
-
-Contacto: <%= @business.contact_name %>
-<br>
-Telefono Contacto: <%= @business.contact_phone %>
-<br>
-
-Direccion: <%= @business.address %>
-<br>
 
 
 <% if @business.products.length > 0 %>
@@ -32,7 +88,9 @@ Direccion: <%= @business.address %>
     Productos
   </h2>
 
-  <% for product in @business.products %>
-    <%= render product %>
-  <% end %>
+  <div class="row-marketing">
+    <% for product in @business.products %>
+      <%= render product %>
+    <% end %>
+  </div>
 <% end %>
