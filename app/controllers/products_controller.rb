@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-  before_action :find_models
   before_action :authenticate_business!, only: [:new, :create]
 
   def new
