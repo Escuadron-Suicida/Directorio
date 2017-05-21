@@ -35,6 +35,12 @@
     <th>
       Direccion
     </th>
+
+    <% if current_business == @business %>
+      <th>
+	Editar
+      </th>
+    <% end %>
   </thead>
 
   <tbody>
@@ -74,6 +80,12 @@
       <td>
 	<%= @business.address %>
       </td>
+
+      <% if current_business == @business %>
+	<td>
+	  <%= link_to 'Editar', edit_business_registration_path(@business) %>
+	</td>
+      <% end %>
     </tr>
   </tbody>
 </table>

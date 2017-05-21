@@ -1,24 +1,25 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), method: :put) do |f| %>
   <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :contraseña_actual %>
+    <br>
+    <%= f.password_field :current_password, autocomplete: false %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.label :password %>
     <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
@@ -27,12 +28,52 @@
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+    <%= f.label :nombre %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rut %><br />
+    <%= f.text_field :rut %>
+  </div>
+
+  <div class="field">
+    <%= f.label :razon_social %><br />
+    <%= f.text_field :legal_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombre_representate %><br />
+    <%= f.text_field :agent_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rut_representate %><br />
+    <%= f.text_field :agent_rut %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telefono %><br />
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombre_contacto %><br />
+    <%= f.text_field :contact_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telefono_contacto %><br />
+    <%= f.text_field :contact_phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :direccion %><br />
+    <%= f.text_field :address %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Editar" %>
   </div>
 <% end %>
 
