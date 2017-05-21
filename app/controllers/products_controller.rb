@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_business!, only: [:new, :create, :update, :edit]
-  before_action :set_product!, only: [:show, :edit, :update]
+  before_action :authenticate_business!, only: [:new, :create, :update, :edit, :destroy]
+  before_action :set_product!, only: [:show, :edit, :update, :destroy]
 
   def new
     @product = Product.new
@@ -32,6 +32,12 @@ class ProductsController < ApplicationController
     else
       return render :new
     end
+  end
+
+  def destroy
+    business = @product.business
+    @product.destroy
+    redirect_to business_path(business), notice: 'Producto eliminado'
   end
 
   private
