@@ -1,6 +1,24 @@
-<%= render @product %>
+<li class="media">
+  <div class="media-left">
+    <a href="#">
+      <%= image_tag @product.photo.url(:medium) %>
+    </a>
+  </div>
+
+  <div class="media-body">
+    <h4 class="media-heading">
+      <%= @product.name%>
+    </h4>
+
+    <%= @product.description %>
+  </div>
+</li>
 
 <% if current_business == @product.business %>
+  <h2>
+    Acciones
+  </h2>
+
   <%= link_to 'Editar', edit_business_product_path(@product.business, @product) %>
   <%= link_to 'Eliminar', business_product_path(@product.business, @product), method: :delete %>
 <% end %>
