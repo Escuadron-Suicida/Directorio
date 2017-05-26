@@ -40,6 +40,10 @@
       <th>
 	Editar
       </th>
+
+      <th>
+	Eliminar
+      </th>
     <% end %>
   </thead>
 
@@ -84,6 +88,10 @@
       <% if current_business == @business %>
 	<td>
 	  <%= link_to 'Editar', edit_business_registration_path(@business) %>
+	</td>
+
+	<td>
+	  <%= link_to 'Eliminar', business_registration_path, method: :delete %>
 	</td>
       <% end %>
     </tr>

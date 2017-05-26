@@ -7,5 +7,7 @@ class Business < ApplicationRecord
   has_many :business_sectors
   has_many :sectors, through: :business_sectors
 
-  has_many :products
+  has_many :products, dependent: :delete_all
+
+  validates :name, presence: true
 end
