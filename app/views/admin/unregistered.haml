@@ -1,0 +1,43 @@
+%header.green
+	%div.text-center
+		.col-md-12.no-padding.inline-block.bold.big.grey-text
+			Directorio
+
+%header.light-blue.large-padding
+	%div.text-center
+		.col-md-9.no-float.center-block 
+
+			.Kostic.bigger.bold
+				=link_to new_business_session_path,class:"btn btn-primary" do
+					Iniciar Sesion
+
+			.Kostic.bigger.bold
+				=link_to new_business_registration_path,class:"btn btn-danger" do
+					Registrate
+%article.big-padding
+	%h1.text-center 
+		Lista de Empresas
+	%section.inline-block.col-md-12.row
+		%table.table.table-striped.table-hover.col-md-8.no-float
+			%thead
+				%tr
+					
+					%th Nombre
+					%th Telefono
+					%th Email
+					%th Nombre contacto
+					%th Telefono contacto
+					%th Direccion
+					%th
+
+			%tbody
+				- @businesses.each do |business|
+					%tr
+						
+						%td= business.name
+						%td= business.phone
+						%td= business.email
+						%td= business.contact_name
+						%td= business.contact_phone
+						%td= business.address
+						%td= link_to 'Mostrar', business_session_path

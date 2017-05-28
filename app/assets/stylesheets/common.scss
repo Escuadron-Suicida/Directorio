@@ -1,0 +1,200 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+
+$green: #16a085;
+$grey: #5A6576;
+$other-grey: #E7ECEE;
+$blue: #058CC5;
+$red: #d2527f;
+$light-blue: #3498DB;
+$teal: #009688;
+
+.card{
+	margin: 2px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+	transition: 0.3s; 
+}
+
+/*
+Texto
+
+*/
+.bold{
+	font-weight:bold;
+}
+
+
+
+
+.teal{
+	background-color: $teal;
+}.green{
+	background-color: $green;
+}
+.green-text{
+	color: $green;
+}
+.blue{
+	background-color: $blue;
+}
+.blue-text{
+	color: $blue;
+}
+.red{
+	background-color: $red;
+}
+.red-text{
+	color: $red;
+}
+.grey{
+	background-color: $other-grey;
+}
+.grey-text{
+	color: $grey;
+}
+.other-grey{
+	background-color: $other-grey;
+}
+.other-grey-text{
+	color: $grey;
+}
+.light-blue{
+	background-color: $light-blue;
+}
+.light-blue-text{
+	color: $light-blue;
+}
+.white{
+	background-color: white;
+}
+.white-text{
+	color: white;
+}
+
+
+/* paddings */
+
+.large-padding{
+	padding:5px 10px;
+}
+
+.big-padding{
+	padding:2em;
+}
+.no-padding{
+	padding:0;
+}
+
+
+
+
+
+
+/* alinamiento */
+
+
+
+
+.in-top{
+	vertical-align: top !important
+}
+.no-float{
+	float: none !important;
+}
+.inline-block{
+	float: none !important;
+	vertical-align:middle;
+	margin-right: -4px;
+}
+.absolute{
+	position:absolute;
+}
+.alineamiento-central{
+	vertical-align:middle;
+}
+
+
+
+
+
+.center-block{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+.hidden{
+	display: none !important;
+}
+.pull-right{
+	float:right !important;
+}
+.pull-left{
+	float:left !important;
+}
+.pull-center{
+	float:middle !important;
+}
+
+
+
+/* margenes */
+
+
+.big-top-space{
+	margin-top:50px;
+}
+
+.top-space{
+	margin-top:1em;
+}
+.bottom-space{
+	margin-bottom:2em;
+}
+.left-space{
+	margin-left:4em;
+}
+.right-space{
+	margin-right:4em;
+}
+.no-margin{
+	margin:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*tamaños */
+
+.small{
+	font-size:12px;
+}
+.normal{
+	font-size:1.2em;
+}
+.medium{
+	font-size:1.5em;
+}
+.big{
+	font-size:2.2em;
+}
+.bigger{
+	font-size:3em;
+}
+.ultra-big{
+	font-size:6em;
+}
+.demencial{
+	font-size:10em;
+}

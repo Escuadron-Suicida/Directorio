@@ -1,0 +1,100 @@
+img{
+	max-width:100% !important;
+}
+
+a:hover{
+	color: inherit !important;
+}
+.close-parent{
+	cursor:pointer;
+}
+
+
+
+$green: #16a085;
+$grey: #5A6576;
+$other-grey: #E7ECEE;
+$blue: #058CC5;
+$red: #d2527f;
+$light-blue: #3498DB;
+
+.green{
+	background-color: $green;
+}
+.green-text{
+	color: $green;
+}
+.blue{
+	background-color: $blue;
+}
+.blue-text{
+	color: $blue;
+}
+.red{
+	background-color: $red;
+}
+.red-text{
+	color: $red;
+}
+.grey{
+	background-color: $other-grey;
+}
+.grey-text{
+	color: $grey;
+}
+.other-grey{
+	background-color: $other-grey;
+}
+.other-grey-text{
+	color: $grey;
+}
+.light-blue{
+	background-color: $light-blue;
+}
+.light-blue-text{
+	color: $light-blue;
+}
+.white{
+	background-color: white;
+}
+.white-text{
+	color: white;
+}
+
+
+/* paddings */
+.tall-padding{
+	padding :10px 5px;
+}
+.big-padding{
+	padding:2em;
+}
+.no-padding{
+	padding:0;
+}
+
+/* alinamiento */
+
+.no-float{
+	float: none !important;
+}
+.inline-block{
+	float: none !important;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+
+/*tamaños */
+
+.ultra-big{
+	font-size:5em;
+}
+
+
+
+
+
+.right-space{
+	margin-right:1em;
+}
