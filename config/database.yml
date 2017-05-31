@@ -28,6 +28,7 @@ development:
   user: fernando
   database: fernando
   password: 1234
+  host: <%= "postgres_dev" || "localhost" %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -61,9 +62,10 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  user: Directorio_test
-  database: Directorio_test
-  password: Directorio_test
+  user: fernando
+  database: fernando
+  password: 1234
+  host: <%= "postgres_test" || "localhost" %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

@@ -1,20 +1,31 @@
 version: "2"
 
 services:
+  rails:
+    build: .
+    ports:
+      - "3000:3000"
+    command: bundle exec rails server -b '0.0.0.0' -p 3000
+    volumes:
+      - .:/app
+    links:
+      - postgres_dev
+      - postgres_test
+
   postgres_dev:
     image: postgres:latest
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_DB: Directorio_development
-      POSTGRES_USER: Directorio_development
-      POSTGRES_PASSWORD: Directorio_development
+      POSTGRES_DB: fernando
+      POSTGRES_USER: fernando
+      POSTGRES_PASSWORD: 1234
 
   postgres_test:
     image: postgres:latest
     ports:
       - "5433:5432"
     environment:
-      POSTGRES_DB: Directorio_test
-      POSTGRES_USER: Directorio_test
-      POSTGRES_PASSWORD: Directorio_test
+      POSTGRES_DB: fernando
+      POSTGRES_USER: fernando
+      POSTGRES_PASSWORD: 1234
