@@ -28,7 +28,7 @@ development:
   user: fernando
   database: fernando
   password: 1234
-  host: <%= "postgres_dev" || "localhost" %>
+  host: <%= ENV.fetch("DB_DEV") { "localhost" } %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -65,7 +65,7 @@ test:
   user: fernando
   database: fernando
   password: 1234
-  host: <%= "postgres_test" || "localhost" %>
+  host: <%= ENV.fetch("DB_DEV") { "localhost" } %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

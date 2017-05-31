@@ -11,6 +11,9 @@ services:
     links:
       - postgres_dev
       - postgres_test
+    environment:
+      - DB_DEV=postgres_dev
+      - DB_TEST=postgres_test
 
   postgres_dev:
     image: postgres:latest
