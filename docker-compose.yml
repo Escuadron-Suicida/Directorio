@@ -1,21 +1,21 @@
 version: "2"
 
 services:
-  rails:
-    build: .
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile-rails
     ports:
       - "3000:3000"
-    command: bundle exec rails server -b '0.0.0.0' -p 3000
+    command: bundle exec rails server -b 0.0.0.0 -p 3000
     volumes:
       - .:/app
     links:
-      - postgres_dev
-      - postgres_test
+      - db
     environment:
-      - DB_DEV=postgres_dev
-      - DB_TEST=postgres_test
+      - DB_DEV=db
 
-  postgres_dev:
+  db:
     image: postgres:latest
     ports:
       - "5432:5432"
@@ -24,11 +24,11 @@ services:
       POSTGRES_USER: fernando
       POSTGRES_PASSWORD: 1234
 
-  postgres_test:
-    image: postgres:latest
-    ports:
-      - "5433:5432"
-    environment:
-      POSTGRES_DB: fernando
-      POSTGRES_USER: fernando
-      POSTGRES_PASSWORD: 1234
+  box:
+    build:
+      context: .
+      dockerfile: Dockerfile-debian
+
+    working_dir: '/app'
+    volumes:
+      - .:/app
