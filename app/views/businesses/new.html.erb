@@ -1,11 +1,9 @@
+<%= render 'partials/list_errors', object: @business %>
+
 <div class="col-md-6 col-xs-10 col-sm-8 col-lg-5 center-block no-float ">
-
   <div class="card big-padding">
-
     <h2 class="blue-text">Registrarse</h2>
-
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+    <%= form_for(@business, method: :create, html: { multipart: true }) do |f| %>
       <div class="field">
 	<%= f.label :Nombre_de_la_empresa%><br />
 	<%= f.text_field :name, autofocus: true,class:"form-control" %>
@@ -34,6 +32,14 @@
 	<%= f.label :telefono_del_contacto %><em> (no obligatorio)</em><br />
 	<%= f.number_field :contact_phone, class:"form-control" %>
       </div>
+
+      <div class="field">
+	  <%= f.label :imagen %>
+	  <%= f.file_field :image %>
+      </div>
+
+      <br>
+
       <div class="field">
 	<%= f.label :email %><br />
 	<%= f.email_field :email,class:"form-control" %>
@@ -57,6 +63,6 @@
       </div>
     <% end %>
 
-    <%= render "devise/shared/links" %>
+    <%#= render "devise/shared/links" %>
   </div>
 </div>
