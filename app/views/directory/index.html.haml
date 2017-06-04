@@ -1,0 +1,28 @@
+%h1
+  Listado de empresas
+
+- @businesses.each do |business|
+  %div.col-sm-2
+    = render business
+
+-# %table.table.table-striped.table-hover.col-md-8.no-float
+-#   %thead
+-#     %tr
+-#       %th Id
+-#       %th Nombre
+-#       %th Telefono
+-#       %th Email
+-#       %th nombre contacto
+-#       %th direccion
+-#       %th admin
+
+-#       %tbody
+-#         - @businesses.each do |business|
+-#           %tr
+-#             %td= business.id
+-#             %td= business.name
+-#             %td= business.phone
+-#             %td= business.email
+-#             %td= business.contact_name
+-#             %td= business.address
+-#             %td=business.admin

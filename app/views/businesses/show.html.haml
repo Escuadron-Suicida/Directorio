@@ -1,2 +1,31 @@
-%h1 Businesses#show
-%p Find me in app/views/businesses/show.html.haml
+%table.table.table-striped.table-hover.col-md-8.no-float
+  %thead
+    %tr
+      %th Id
+      %th Nombre
+      %th Telefono
+      %th Email
+      %th nombre contacto
+      %th direccion
+      %th admin
+
+      %tbody
+        %tr
+          %td= @business.id
+          %td= @business.name
+          %td= @business.phone
+          %td= @business.email
+          %td= @business.contact_name
+          %td= @business.address
+          %td= @business.admin
+
+- if current_business == @business
+  = link_to 'Agregar producto', new_product_path
+
+- if @business.products.length > 0
+  %h2
+    Productos
+
+  - @business.products.each do |product|
+    %div.col-sm-2
+      = render product

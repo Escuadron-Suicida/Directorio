@@ -1,0 +1,9 @@
+<div class="thumbnail">
+  <%= image_tag(product.avatar.url(:medium)) %>
+
+  <div class="caption">
+    <h3>
+      <%= link_to product.name, product_path(product) %>
+    </h3>
+  </div>
+</div>
