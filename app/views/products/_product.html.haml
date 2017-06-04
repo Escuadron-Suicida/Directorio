@@ -1,0 +1,5 @@
+.thumbnail
+  = image_tag(product.avatar.url(:medium), heigth: 200, width: 200)
+  .caption
+    %h3
+      = link_to product.name, product_path(product)

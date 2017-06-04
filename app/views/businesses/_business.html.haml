@@ -1,0 +1,5 @@
+.thumbnail
+  = image_tag(business.image.url(:medium), heigth: 200, width: 200)
+  .caption
+    %h3
+      = link_to business.name, business_path(business)

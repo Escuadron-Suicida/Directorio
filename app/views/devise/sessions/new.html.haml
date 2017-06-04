@@ -1,0 +1,19 @@
+.col-md-6.col-xs-10.col-sm-8.col-lg-5.center-block.no-float
+  .card.big-padding
+    %h2 Iniciar sesion
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.label :email
+        %br/
+        = f.email_field :email, autofocus: true, class:"form-control"
+      .field
+        = f.label :Contraseña
+        %br/
+        = f.password_field :password, autocomplete: "off",class:"form-control"
+      - if devise_mapping.rememberable?
+        .top-space
+          = f.check_box :remember_me
+          = f.label :remember_me
+      .actions
+        = f.submit "Entrar",class:"btn btn-info"
+    = link_to 'Registrarse', new_business_path

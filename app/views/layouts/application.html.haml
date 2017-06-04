@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Repuestos
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .blue.white-text.large-padding.bold.text-center{:style => "#{"display:none;" if alert.nil? && notice.nil?}"}
+      %p.no-padding.no-margin.inline-block
+        = notice
+        = alert
+      %span.pull-right.close-parent x
+    = render "partials/nav"
+    .col-md-11.no-float.center-block
+      = yield
