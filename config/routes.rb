@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :productos
   get 'businesses/index'
 
   get 'businesses/show'
