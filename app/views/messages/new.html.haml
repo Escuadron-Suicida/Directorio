@@ -1,0 +1,14 @@
+.well.bs-component
+  = form_for(@message, method: :create, class: 'form-horizontal') do |f|
+    %fieldset
+      .form-group
+        .field
+          = f.label 'Contenido'
+          = f.text_area :content, cols: 200, rows: 20
+
+        %br
+
+        = f.hidden_field :sender_id, value: @sender.id
+        = f.hidden_field :receiver_id, value: @receiver.id
+
+        = f.submit 'Enviar', class: 'btn btn-raised btn-primary'

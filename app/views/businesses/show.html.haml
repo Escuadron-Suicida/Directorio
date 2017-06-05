@@ -7,7 +7,9 @@
       %th Email
       %th nombre contacto
       %th direccion
-      %th admin
+
+      - if current_business != @business
+        %th Mensaje
 
       %tbody
         %tr
@@ -17,7 +19,12 @@
           %td= @business.email
           %td= @business.contact_name
           %td= @business.address
-          %td= @business.admin
+
+          - if current_business != @business
+            %td
+              = link_to 'Enviar mensaje',
+              new_message_path(sender_id: current_business.id,
+              receiver_id: @business.id)
 
 - if current_business == @business
   = link_to 'Agregar producto', new_product_path

@@ -11,6 +11,4 @@ class Product < ApplicationRecord
       unscoped
     end
   end
-
-
 end
