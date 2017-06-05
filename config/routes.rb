@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
-  get 'businesses/index'
-
-  get 'businesses/show'
-
   root 'directory#index'
 
   resources :products
 
   resources :businesses
+
+  resources :messages
 
   scope :session do
     devise_for :businesses
