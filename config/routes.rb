@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :productos
   root 'directory#index'
 
   resources :products

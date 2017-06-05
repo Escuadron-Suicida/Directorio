@@ -1,0 +1,11 @@
+= form_for @producto,builder: BootstrapFormBuilder do |f|
+
+    =f.errors
+    = f.text_field :nombre
+    =f.file_field :avatar
+    = f.text_area :descripcion
+    = f.number_field :stock
+    = f.text_field :categoria
+    = f.number_field :precio_compra
+    = f.number_field :precio_venta
+    = f.submit 'Agregar producto'

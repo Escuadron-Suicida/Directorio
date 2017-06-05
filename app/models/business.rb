@@ -5,6 +5,7 @@ class Business < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :products
   has_many :messages
+  has_many :productos
   has_many :business_sectors
   has_many :sectors, through: :business_sectors
 

@@ -1,13 +1,16 @@
 %header
 	%nav.green
 		%ul.no-list.no-padding.text-center
-			%li.col-md-5.inline-block.tall-padding.white-text
+			%li.col-md-9.inline-block.tall-padding.white-text
 				=link_to "/", class:"right-space white-text" do
-					%i.mdi-action-trending-up 
+					%i.mdi-action-store
 					Directorio
 				=link_to products_path, class:"right-space white-text" do
-					%i.mdi-action-trending-up 
+					%i.mdi-action-lock
 					Ver productos
+				=link_to productos_path, class:"right-space white-text" do
+					%i.mdi-action-trending-up 
+					Ver inventario
 				
 				-if  !business_signed_in?
 					=link_to new_business_session_path,class:"btn btn-info" do
@@ -18,7 +21,7 @@
 						Usuarios
 
 				-if business_signed_in?
-					=link_to "perfil", edit_business_registration_path,class:"right-space white-text"
+					=link_to "mi perfil", edit_business_registration_path,class:"right-space white-text"
 
 				-if business_signed_in?
 					=link_to "Cerrar sesion", destroy_business_session_path,method: :delete,class:"right-space white-text"
