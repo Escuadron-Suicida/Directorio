@@ -6,9 +6,8 @@
       = form_tag({:controller => "productos", :action => "index"}, :method => :get) do 
         =text_field_tag "searchbox", params[:searchbox],placeholder:"Buscar por nombre"
         =submit_tag "Buscar", :nombre => nil
-        -if current_business.try(:admin? )
-          = link_to new_producto_path, class:"btn btn-success" do
-            Nuevo Producto
+        = link_to new_producto_path, class:"btn btn-success" do
+          Nuevo Producto
 
     %table.table.table-striped.table-hover.col-md-8.no-float
       %thead
@@ -16,9 +15,11 @@
           %th Nombre
           %th Descripcion
           %th Stock
+          %th
+          %th
           %th Precio compra
           %th Precio venta
-          %th Empresa
+          %th Estado
           %th 
           %th
           %th
@@ -26,13 +27,18 @@
       %tbody
         - @productos.each do |producto|
           %tr.success
+          -if producto.business==current_business
             %td= producto.nombre
             %td= producto.descripcion
             %td= producto.stock
+            %td=form_tag aumentar_path
+            %td
+              =form_tag disminuir_path, params: { id: producto.id} do
+                =submit_tag '+'
+
             %td= producto.precio_compra
             %td= producto.precio_venta
-            %td= producto.business_id
-            %td= link_to 'Mostrar', producto
-            -if current_business.try(:admin? )
-              %td= link_to 'Editar', edit_producto_path(producto)
-              %td= link_to 'Eliminar', producto, :method => :delete, :data => { :confirm => 'Estas Seguro?' }
+            %td= "todavia con stock"
+            %td.success= link_to 'Mostrar', producto
+            %td.info= link_to 'Editar', edit_producto_path(producto)
+            %td.danger= link_to 'Eliminar', producto, :method => :delete, :data => { :confirm => 'Estas Seguro?' }

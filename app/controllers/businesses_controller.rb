@@ -2,7 +2,8 @@ class BusinessesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @business = Business.find(params[:id])
+    @businesses = Business.all.order("name")
+    @businesses = Business.search(params[:searchbox]).order("name")
   end
 
   def show

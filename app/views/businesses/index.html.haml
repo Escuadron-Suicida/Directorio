@@ -1,2 +1,32 @@
-%h1 Businesses#index
-%p Find me in app/views/businesses/index.html.haml
+%h1.bold.blue-text
+	Listado de empresas
+%section.pull-right
+	= form_tag({:controller => "businesses", :action => "index"}, :method => :get) do
+		=text_field_tag "searchbox", params[:searchbox],placeholder:"Buscar por nombre"
+		=submit_tag "Buscar", :name => nil, class:"btn btn-info"
+
+- @businesses.each do |business|
+	%div.col-sm-2
+		= render business
+
+-# %table.table.table-striped.table-hover.col-md-8.no-float
+-#   %thead
+-#     %tr
+-#       %th Id
+-#       %th Nombre
+-#       %th Telefono
+-#       %th Email
+-#       %th nombre contacto
+-#       %th direccion
+-#       %th admin
+
+-#       %tbody
+-#         - @businesses.each do |business|
+-#           %tr
+-#             %td= business.id
+-#             %td= business.name
+-#             %td= business.phone
+-#             %td= business.email
+-#             %td= business.contact_name
+-#             %td= business.address
+-#             %td=business.admin

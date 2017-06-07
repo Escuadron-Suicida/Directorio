@@ -11,6 +11,15 @@ class Product < ApplicationRecord
       unscoped
     end
   end
+  def aumentar_stock
+    self.stock=self.stock+1
+    save
+  end
+  def disminuir_stock
+    self.stock=self.stock-1
+    save
+  end
+
 
 
 end

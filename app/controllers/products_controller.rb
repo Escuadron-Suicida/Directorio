@@ -25,8 +25,8 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = current_business.products.new(product_params)
-    
+    @product = Product.new(product_params)
+    @product.business = current_business
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Producto creado.' }

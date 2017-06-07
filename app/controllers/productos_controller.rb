@@ -5,6 +5,7 @@ class ProductosController < ApplicationController
   # GET /productos.json
   def index
     @productos = Producto.all.order("nombre")
+    @productos = Producto.search(params[:searchbox]).order("nombre")
     
   end
 
@@ -21,11 +22,23 @@ class ProductosController < ApplicationController
   # GET /productos/1/edit
   def edit
   end
+  
+  def aumentar
+    @producto = Producto.find(params[:id])
+    @producto.aumentar_stock
+    render :index
+  end
+  def disminuir
+    @producto = Producto.find(params[:id])
+    @producto.disminuir_stock
+    render :index
 
+  end
   # POST /productos
   # POST /productos.json
   def create
-    @producto = current_business.productos.new(producto_params)
+    @producto = Producto.new(producto_params)
+    @producto.business = current_business
 
     respond_to do |format|
       if @producto.save

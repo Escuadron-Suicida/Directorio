@@ -4,8 +4,9 @@ Rails.application.routes.draw do
 
   get 'businesses/show'
 
-  root 'directory#index'
-
+  root 'businesses#index'
+  post 'productos#aumentar', controller:'productos', action: 'aumentar', as: 'aumentar'
+  post 'productos#disminuir', controller:'productos', action: 'disminuir', as: 'disminuir'
   resources :products
 
   resources :businesses

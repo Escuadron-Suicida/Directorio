@@ -8,9 +8,10 @@
 				=link_to products_path, class:"right-space white-text" do
 					%i.mdi-action-lock
 					Ver productos
-				=link_to productos_path, class:"right-space white-text" do
-					%i.mdi-action-trending-up 
-					Ver inventario
+				-if business_signed_in?
+					=link_to productos_path, class:"right-space white-text" do
+						%i.mdi-action-trending-up 
+						Ver inventario
 				
 				-if  !business_signed_in?
 					=link_to new_business_session_path,class:"btn btn-info" do

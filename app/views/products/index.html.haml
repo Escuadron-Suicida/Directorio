@@ -1,14 +1,13 @@
 %article.big-padding
   %h1.text-center 
-    Lista de productos
+    Productos en vitrina
   %section.inline-block.col-md-12.row
     %section.pull-right
       = form_tag({:controller => "products", :action => "index"}, :method => :get) do 
         =text_field_tag "searchbox", params[:searchbox],placeholder:"Buscar por nombre"
         =submit_tag "Buscar", :name => nil
-        -if current_business.try(:admin? )
-          = link_to new_product_path, class:"btn btn-success" do
-            Nuevo Producto
+        = link_to new_product_path, class:"btn btn-success" do
+          Nuevo Producto
 
     %table.table.table-striped.table-hover.col-md-8.no-float
       %thead
@@ -25,8 +24,8 @@
           %tr
             %td= product.name
             %td= product.description
-            %td= product.business_id
-            %td= link_to 'Mostrar', product
-            -if current_business.try(:admin? )
-              %td= link_to 'Editar', edit_product_path(product)
-              %td= link_to 'Eliminar', product, :method => :delete, :data => { :confirm => 'Estas Seguro?' }
+            %td= link_to product.business.name, business_path(product.business)
+            %td.success= link_to 'Mostrar', product
+            -if product.business==current_business
+              %td.info= link_to 'Editar', edit_product_path(product)
+              %td.danger= link_to 'Eliminar', product, :method => :delete, :data => { :confirm => 'Estas Seguro?' }
