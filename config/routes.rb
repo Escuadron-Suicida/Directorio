@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :productos
+<<<<<<< HEAD
   get 'businesses/index'
 
   get 'businesses/show'
@@ -7,9 +8,15 @@ Rails.application.routes.draw do
   root 'businesses#index'
   post 'productos#aumentar', controller:'productos', action: 'aumentar', as: 'aumentar'
   post 'productos#disminuir', controller:'productos', action: 'disminuir', as: 'disminuir'
+=======
+  root 'directory#index'
+
+>>>>>>> bb7463e952ec4ba3cce08e4014f35a67a10635d4
   resources :products
 
   resources :businesses
+
+  resources :messages
 
   scope :session do
     devise_for :businesses

@@ -46,6 +46,16 @@ ActiveRecord::Schema.define(version: 20170604224302) do
     t.index ["reset_password_token"], name: "index_businesses_on_reset_password_token", unique: true
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.bigint "sender_id"
+    t.bigint "receiver_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["receiver_id"], name: "index_messages_on_receiver_id"
+    t.index ["sender_id"], name: "index_messages_on_sender_id"
+  end
+
   create_table "productos", force: :cascade do |t|
     t.string "nombre"
     t.integer "stock"
