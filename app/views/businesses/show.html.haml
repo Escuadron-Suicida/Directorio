@@ -8,7 +8,7 @@
       %th nombre contacto
       %th direccion
 
-      - if current_business != @business
+      - if can_send_message? @business
         %th Mensaje
 
       %tbody
@@ -20,7 +20,7 @@
           %td= @business.contact_name
           %td= @business.address
 
-          - if current_business != @business
+          - if can_send_message? @business
             %td
               = link_to 'Enviar mensaje',
               new_message_path(sender_id: current_business.id,
