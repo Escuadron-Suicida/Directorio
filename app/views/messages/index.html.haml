@@ -13,6 +13,6 @@
         -# %td
           -# = message.seen? ? "Si" : "No"
         %td
-          = message.sender.name
+          = link_to message.sender.name, message_path(message)
         %td
           = message.created_at
