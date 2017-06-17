@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   before_action :authenticate_business!
 
   def index
-    @messages = current_business.messages
+    @messages = current_business.received_messages
   end
 
   def new

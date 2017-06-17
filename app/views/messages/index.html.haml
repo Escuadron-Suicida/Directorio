@@ -1,0 +1,18 @@
+%table.table
+  %thead
+    -# %th
+    -#   Leido
+    %th
+      De
+    %th
+      Fecha
+
+  %tbody
+    - @messages.each do |message|
+      %tr
+        -# %td
+          -# = message.seen? ? "Si" : "No"
+        %td
+          = message.sender.name
+        %td
+          = message.created_at
