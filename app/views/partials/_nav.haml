@@ -1,28 +1,30 @@
 %header
-	%nav.green
-		%ul.no-list.no-padding.text-center
-			%li.col-md-9.inline-block.tall-padding.white-text
-				=link_to "/", class:"right-space white-text" do
-					%i.mdi-action-store
-					Directorio
-				=link_to products_path, class:"right-space white-text" do
-					%i.mdi-action-lock
-					Ver productos
-				-if business_signed_in?
-					=link_to productos_path, class:"right-space white-text" do
-						%i.mdi-action-trending-up 
-						Ver inventario
-				
-				-if  !business_signed_in?
-					=link_to new_business_session_path,class:"btn btn-info" do
-						Iniciar Sesion
-				-if current_business.try(:admin? )
-					=link_to "/admin/index", class:"right-space white-text" do
-						%i.mdi-action-account-box
-						Usuarios
+  %nav.green
+    %ul.no-list.no-padding.text-center
+      %li.col-md-9.inline-block.tall-padding.white-text
+        =link_to "/", class:"right-space white-text" do
+          %i.mdi-action-store
+          Directorio
 
-				-if business_signed_in?
-					=link_to "mi perfil", edit_business_registration_path,class:"right-space white-text"
+        =link_to products_path, class:"right-space white-text" do
+          %i.mdi-action-lock
+          Ver productos
 
-				-if business_signed_in?
-					=link_to "Cerrar sesion", destroy_business_session_path,method: :delete,class:"right-space white-text"
+        -if business_signed_in?
+          =link_to productos_path, class:"right-space white-text" do
+            %i.mdi-action-trending-up
+            Ver inventario
+
+      -if  !business_signed_in?
+        =link_to new_business_session_path,class:"btn btn-info" do
+          Iniciar Sesion
+
+      -if current_business.try(:admin? )
+        =link_to "/admin/index", class:"right-space white-text" do
+          %i.mdi-action-account-box
+          Usuarios
+
+      -if business_signed_in?
+        =link_to "Perfil", edit_business_registration_path, class:"right-space white-text"
+        =link_to "Mensajes", messages_path(current_business), class: "right-space white-text"
+        =link_to "Cerrar sesion", destroy_business_session_path, method: :delete, class:"right-space white-text"

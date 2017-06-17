@@ -1,5 +1,6 @@
 .well.bs-component
   = form_for(@message, method: :create, class: 'form-horizontal') do |f|
+    = csrf_meta_tag
     %fieldset
       .form-group
         .field

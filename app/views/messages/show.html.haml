@@ -1,2 +1,8 @@
-%h1 Messages#show
-%p Find me in app/views/messages/show.html.haml
+.well
+  %h4
+    De:
+    = @message.sender.name
+
+  %br
+
+    = @message.content

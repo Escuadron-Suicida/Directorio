@@ -1,6 +1,10 @@
 class MessagesController < ApplicationController
   before_action :authenticate_business!
 
+  def index
+    @messages = current_business.messages
+  end
+
   def new
     @message = Message.new
     @sender = Business.find(params[:sender_id])
@@ -8,12 +12,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @sender = Business.find(params[:message][:sender_id])
-    @receiver = Business.find(params[:message][:receiver_id])
-
-    @message = Message.new sender: @sender,
-                           receiver: @receiver,
-                           content: params[:message][:content]
+    @message = Message.create(message_params)
 
     if @message.save
       redirect_to @message
@@ -23,6 +22,7 @@ class MessagesController < ApplicationController
   end
 
   def show
+    @message = Message.find(params[:id])
   end
 
   private
