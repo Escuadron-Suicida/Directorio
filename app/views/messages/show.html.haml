@@ -1,4 +1,21 @@
+%table.table
+  %thead
+    %th
+      De
+    %th
+      Asunto
+
+  %tbody
+    %tr
+      %td
+        = @message.sender.name
+
+      %td
+        = @message.subject
+
 .well
+  = @message.content
+-# .well
   %h4
     De:
     = @message.sender.name

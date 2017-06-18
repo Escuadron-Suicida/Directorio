@@ -28,6 +28,9 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:content, :sender_id, :receiver_id)
+    params.require(:message).permit(:content,
+                                    :subject,
+                                    :sender_id,
+                                    :receiver_id)
   end
 end

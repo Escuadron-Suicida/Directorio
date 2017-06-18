@@ -23,8 +23,16 @@ class Business < ApplicationRecord
     end
   end
 
+  def unseen_messages
+    received_messages.where({seen: false})
+  end
+
   def received_messages
     Message.where sender: self
+  end
+
+  def unseen_messages?
+    unseen_messages.count > 0
   end
 
   end
