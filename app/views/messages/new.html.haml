@@ -2,12 +2,11 @@
 
   %h3
     Enviando mensaje a:
-    = @sender.name
+    = @receiver.name
 
   %br
 
   = form_for(@message, method: :create, class: 'form-horizontal') do |f|
-    = csrf_meta_tag
     %fieldset
       .form-group
         .field
@@ -21,7 +20,7 @@
 
         %br
 
-        = f.hidden_field :sender_id, value: @sender.id
-        = f.hidden_field :receiver_id, value: @receiver.id
+        = hidden_field_tag :sender_id, @sender.id
+        = hidden_field_tag :receiver_id, @receiver.id
 
         = f.submit 'Enviar', class: 'btn btn-raised btn-primary'

@@ -26,5 +26,5 @@
 
       -if business_signed_in?
         =link_to "Perfil", edit_business_registration_path, class:"right-space white-text"
-        =link_to "Mensajes", messages_path(current_business), class: "right-space white-text"
+        = link_to "Mensajes", messages_path(current_business), class: "right-space white-text"
         =link_to "Cerrar sesion", destroy_business_session_path, method: :delete, class:"right-space white-text"

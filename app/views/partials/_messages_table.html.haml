@@ -1,0 +1,26 @@
+%table.table
+  %thead
+    %th
+      Leido
+    %th
+      De
+    %th
+      Para
+    %th
+      Asunto
+    %th
+      Fecha
+
+  %tbody
+    - messages.each do |message|
+      %tr
+        %td
+          = message.seen? ? "Si" : "No"
+        %td
+          = link_to message.sender.name, business_path(message.sender)
+        %td
+          = link_to message.receiver.name, business_path(message.receiver)
+        %td
+          = link_to message.subject || '', message_path(message)
+        %td
+          = message.created_at

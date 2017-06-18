@@ -28,7 +28,7 @@ class Business < ApplicationRecord
   end
 
   def received_messages
-    Message.where sender: self
+    Message.where receiver: self
   end
 
   def unseen_messages?
